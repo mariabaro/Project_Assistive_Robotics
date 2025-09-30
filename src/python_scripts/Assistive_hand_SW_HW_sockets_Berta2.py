@@ -65,7 +65,6 @@ def go_init():
     print("Going to INIT")
     robot.MoveJ(init, True)
     if robot_is_connected:
-        # ejemplo: valores de las articulaciones de INIT (reemplaza si son otros)
         cmd = f"movej([{','.join(map(str, [radians(-57.835746), radians(-65.391528), radians(-107.167117), radians(172.558645), radians(-57.835746), radians(0.0)]))}], {accel_mss}, {speed_ms},{timel},0)"
         send_ur_script(cmd)
         receive_response(timel)
@@ -74,17 +73,19 @@ def pick_object():
     print("Going to PreGrasp")
     robot.MoveL(pregrasp, True)
     robot.MoveL(grasp, True)
-    robot.MoveL(pregrasp, True)
     print("Grasp done (simulación: cerrar gripper)")
     # aquí comando al gripper real si lo tienes
+    time.sleep(2)  # ⏸ pausa de 3 segundos después del Grasp
+    robot.MoveL(pregrasp, True)
 
 def give_object():
     print("Giving object")
     robot.MoveL(pregive, True)
     robot.MoveL(give, True)
-    robot.MoveL(pregive, True)
     print("Give done")
     # aquí comando de abrir gripper si procede
+    time.sleep(2)  # ⏸ pausa de 3 segundos después del Give
+    robot.MoveL(pregive, True)
 
 # ------------------------------
 # Main
