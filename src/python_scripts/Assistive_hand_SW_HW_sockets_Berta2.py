@@ -2,6 +2,7 @@ from math import radians
 import os
 import time
 import socket
+import numpy as np
 from robodk.robolink import *   # API de RoboDK
 from robodk.robomath import *   # Funciones de matemáticas de RoboDK
 
@@ -32,7 +33,7 @@ pregrasp = RDK.Item("PreGrasp")
 grasp = RDK.Item("Grasp")
 pregive = RDK.Item("PreGive")
 give = RDK.Item("Give")
-
+init_joints = list(np.radians(init.joints())[0])
 # ------------------------------
 # Conexión al robot real por socket
 # ------------------------------
@@ -65,7 +66,7 @@ def go_init():
     print("Going to INIT")
     robot.MoveJ(init, True)
     if robot_is_connected:
-        cmd = f"movej([{','.join(map(str, [radians(-57.835746), radians(-65.391528), radians(-107.167117), radians(172.558645), radians(-57.835746), radians(0.0)]))}], {accel_mss}, {speed_ms},{timel},0)"
+        cmd = f"movej([{init_joints}], {accel_mss}, {speed_ms},{timel},0)"
         send_ur_script(cmd)
         receive_response(timel)
 
