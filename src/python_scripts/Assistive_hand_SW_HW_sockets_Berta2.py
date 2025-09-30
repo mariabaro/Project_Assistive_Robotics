@@ -22,7 +22,7 @@ gripper = RDK.Item("Hand")   # asegúrate que coincida con el nombre en tu RDK
 
 robot.setPoseFrame(base)
 robot.setPoseTool(gripper)
-robot.setSpeed(20)
+robot.setSpeed(40)
 
 # ------------------------------
 # Targets definidos en RoboDK
