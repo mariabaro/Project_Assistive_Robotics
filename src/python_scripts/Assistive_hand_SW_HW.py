@@ -34,6 +34,7 @@ robot.setSpeed(50)
 
 # Connect to real robot or simulate
 def robot_online(online):
+    print("Connecting to UR5e...")
     if online:
         robot.setConnectionParams('192.168.1.5', 30000, '/', 'anonymous', '')
         time.sleep(5)
@@ -95,8 +96,10 @@ def main():
     move_to_init()
     hand_shake()
     give_me_5()
+    move_to_init()
 
 # Run main and handle closing
 if __name__ == "__main__":
     main()
     #confirm_close()
+
