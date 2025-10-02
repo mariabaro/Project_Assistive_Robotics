@@ -2,7 +2,7 @@
 
 ## ROBOTICS AND CONTROL OF BIOMEDICAL SYSTEMS
 ### Robotic arm Universal Robot UR5e
-### Laboratory session 3&4: UR5e Social/Assistive robotic demonstration
+### Laboratory session 4: UR5e Social/Assistive robotic demonstration
 
 ---
 
