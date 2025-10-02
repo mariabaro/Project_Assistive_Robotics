@@ -14,7 +14,7 @@ We can give you an exemple of a Social-Assistive task, such as a hand-shake or a
 
 **Laboratory development**
 
-Each Laboratory group has 10 minutes project presentation with:
-- Project presentation
+Each Laboratory group has up to 10 minutes project presentation with:
+- Project presentation: with some slides summarising what you have learned and what you have done in this project
 - Software and Hardware live demonstration of the assistive robotic tasks designed in the previous session. 
 - All the students have to contribute to the final presentation
