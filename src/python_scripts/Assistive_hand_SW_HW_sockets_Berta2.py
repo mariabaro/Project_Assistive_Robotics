@@ -11,8 +11,12 @@ from robodk.robomath import *   # Funciones de matemáticas de RoboDK
 # ------------------------------
 relative_path = "Project_Assistive_Robotics/src/roboDK/Assistive_UR5e_Maria.rdk"
 absolute_path = os.path.abspath(relative_path)
+print('Opening roboDK')
 RDK = Robolink()
+time.sleep(3)
+print('Opening project')
 RDK.AddFile(absolute_path)
+time.sleep(1)
 
 # ------------------------------
 # Configuración del robot
